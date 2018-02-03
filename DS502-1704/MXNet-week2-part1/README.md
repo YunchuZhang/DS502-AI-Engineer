@@ -92,4 +92,6 @@
         
 ### To start the project, download the data/model/pretrained files from google drive. Unzip them in corresponding folder.        
 
-https://drive.google.com/open?id=0BwXw1vJFiBDaZ1IwNjlEd0RZMFU           
+https://drive.google.com/open?id=0BwXw1vJFiBDaZ1IwNjlEd0RZMFU          
+
+Paper: https://arxiv.org/pdf/1506.02640.pdf 
