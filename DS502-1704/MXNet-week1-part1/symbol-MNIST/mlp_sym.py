@@ -56,10 +56,10 @@ def conv_layer(l, if_pool=False):
     l = mx.sym.Convolution(data=l, kernel=(3, 3), stride =(1, 1),
                            pad=(1, 1), num_filter=20, no_bias=True)
     l = mx.sym.BatchNorm(data = l)
-    l = mx.sym.Activation(data = l, act_typr="relu")
+    l = mx.sym.Activation(data = l, act_type="relu")
 
     if if_pool:
-        l = mx.sym.Pooling( data = l, kernel=(3, 3), stride =(2, 2) ,pool_typr= "max")
+        l = mx.sym.Pooling( data = l, kernel=(3, 3), stride =(2, 2) ,pool_type= "max")
 
 
     return l
@@ -91,8 +91,8 @@ def get_conv_sym():
     # Softmax with cross entropy loss
     mlp = mx.sym.SoftmaxOutput(data=l, name='softmax')
     return mlp
-if __name__ == " __main__ " :
+if __name__ == " __main__ ":
     cnn = get_conv_sym()
     plot = mx.viz.plot_network(cnn, title="cnn ",
-                               save_format= "pdf" , hight_weight=True)
+                               save_format='pdf', hide_weights=True)
     plot.render("cnn")
