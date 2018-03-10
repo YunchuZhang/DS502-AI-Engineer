@@ -31,6 +31,7 @@ def imgResizeBBoxTransform(img, bbox, sizet, grid_size=(7,7,5), dscale=32):
     himg, wimg = img.shape[:2]
     imgR = cv2.resize(img, dsize=(sizet, sizet))
     bboxyolo = np.zeros(grid_size)
+    # eachbox->[x,y,w,h]
     for eachbox in bbox:
         cx, cy, w, h = eachbox
         cxt = 1.0*cx/wimg
@@ -70,3 +71,4 @@ if __name__ == "__main__":
     sizet = 224
     name = "cat"
     toRecFile(imgroot, imglist, annotation, sizet, (7,7,5), 32, name)
+    # 5-> cof,center x, center y, w , h
